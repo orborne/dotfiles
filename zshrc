@@ -1,6 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export PATH=$HOME/.composer/vendor/bin:$PATH
+export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
+export PATH="/opt/homebrew/opt/php/bin:$PATH"
+export PATH="/opt/homebrew/opt/php/sbin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/php@7.4/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/php@7.4/include"
+export LDFLAGS="-L/opt/homebrew/opt/php/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/php/include"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -70,19 +78,28 @@ ZSH_THEME="dracula"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+VSCODE=code-insiders
+
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting history vscode web-search)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export PATH=/opt/homebrew/bin:$PATH
+export TERM='xterm-256color'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+
 
 export EDITOR='nvim'
+# Changes defaults
+alias python='/usr/bin/python3'
+alias pip='/usr/bin/pip3'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -122,6 +139,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # PHP
+alias a='php artisan'
+alias tinker='php artisan tinker'
+alias mfs='php artisan migrate:fresh'
+alias sf='symfony'
+alias sfc='sf console'
+alias phpunit='vendor/bin/phpunit'
 function scheduler() {
     while :; do
         php artisan schedule:run

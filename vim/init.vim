@@ -1,1 +1,1 @@
-/Users/hongphongle/dotfiles/vimrc
+/Users/hongphongle/.dotfiles/vimrc
