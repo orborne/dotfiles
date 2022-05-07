@@ -98,8 +98,8 @@ export LC_ALL=en_US.UTF-8
 
 export EDITOR='nvim'
 # Changes defaults
-alias python='/usr/bin/python3'
-alias pip='/usr/bin/pip3'
+#alias python='/usr/bin/python3'
+#alias pip='/usr/bin/pip3'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
